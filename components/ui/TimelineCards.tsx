@@ -1,5 +1,7 @@
-import { BorderBeam } from "./border-beam"
+"use client";
 import { motion, MotionProps } from "motion/react"
+import DoubleBorderBeam from "./DoubleBorderBeam"
+import PointerHeart from "./PointerHeart"
 
 interface TimelineProps {
     items: {
@@ -47,7 +49,7 @@ const TimelineCards = ({ items }: TimelineProps) => {
                 >
                     <div
                         className="
-                            relative flex flex-col gap-2 p-4 justify-between text-center h-full
+                            flex flex-col gap-2 p-4 justify-between text-center h-full
                             border rounded-lg
                             shadow-lg hover:shadow-xl
                             transition-all duration-300
@@ -59,28 +61,10 @@ const TimelineCards = ({ items }: TimelineProps) => {
                         <h3 className="text-lg font-bold">{title}</h3>
                         <p className="text-sm text-muted-foreground">{description}</p>
 
-                        <BorderBeam
-                            duration={6}
-                            size={100}
-                            className="
-                                from-transparent via-red-500 to-transparent
-                                opacity-0 group-hover:opacity-100
-                                transition-opacity duration-300
-                            "
-                        />
+                        <DoubleBorderBeam />
 
-                        <BorderBeam
-                            duration={6}
-                            delay={3}
-                            size={100}
-                            borderWidth={2}
-                            className="
-                                from-transparent via-blue-500 to-transparent
-                                opacity-0 group-hover:opacity-100
-                                transition-opacity duration-300
-                            "
-                        />
                     </div>
+                    <PointerHeart />
                 </motion.div>
             ))}
         </div>
