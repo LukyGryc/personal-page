@@ -21,7 +21,7 @@ const SectionHeader = ({
         >
             {words.map((word, index) => (
                 //Key=index should be fine because it's a static list, while the words could repeat
-                <span key={index} className={`${word.includes("(") || word.includes(")") ? "hover:animate-spin text-red-600" : ""}`}>
+                <span key={index} className={`${word.includes("(") || word.includes(")") ? "hover:animate-spin" : ""}`}>
                     {word}&nbsp;
                 </span>
             ))}
