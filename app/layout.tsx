@@ -47,7 +47,7 @@ export default function RootLayout({
       >
         <div className="w-full h-full relative">
           <LightRays className="z-0 absolute h-full" />
-          <div className=" w-full h-[3000px] z-10">
+          <div className=" w-full z-10">
             <Header />
             {children}
           </div>
