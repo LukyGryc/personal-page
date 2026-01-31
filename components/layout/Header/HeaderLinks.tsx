@@ -4,9 +4,9 @@ import Link from "next/link"
 import { motion } from "motion/react"
 
 const navigation = [
-    { name: "About", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "O mně", href: "/" },
+    { name: "Projekty", href: "/projects" },
+    { name: "Kontakt", href: "/contact" },
 ]
 
 //ChatGPT helped with the animation
