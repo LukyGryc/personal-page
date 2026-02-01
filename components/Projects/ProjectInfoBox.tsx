@@ -15,7 +15,7 @@ const ProjectInfoBox = ({ title, items, background, className }: ProjectInfoBoxP
 
     return (
         <div
-            className={cn("p-4 rounded-md shadow-lg w-1/2 hover:scale-105 transition-all duration-300", className)}
+            className={cn("p-4 rounded-md shadow-lg w-full md:w-1/2 hover:scale-105 transition-all duration-300", className)}
             style={{
                 backgroundColor: background,
             }}

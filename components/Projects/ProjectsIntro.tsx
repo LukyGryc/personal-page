@@ -6,9 +6,13 @@ import SectionHeader from "../layout/Texts/SectionHeader"
 const ProjectsIntro = () => {
 
     return (
-        <Section className="flex flex-col items-center justify-center min-h-[50vh]">
+        <Section className="flex flex-col gap-4 items-center justify-center min-h-dvh">
             <SectionHeader text="Projekty" animateOnMount />
-            <SectionDescription text="Projekty, které jsem vytvořil během posledních pár týdnů, ve kterých jsem chtěl vyzkoušet co nejvíce ze světa Next.js" animateOnMount />
+            <SectionDescription
+                text="Projekty, které jsem vytvořil během posledních pár týdnů, ve kterých jsem chtěl vyzkoušet co nejvíce ze světa Next.js, řazeny chronologicky"
+                animateOnMount
+                className="text-center"
+            />
             <ScrollDown />
         </Section>
     )

@@ -2,7 +2,6 @@ import MainPage from "@/components/layout/Pages/MainPage";
 import SectionDescription from "@/components/layout/Texts/SectionDescription";
 import SectionHeader from "@/components/layout/Texts/SectionHeader";
 import ProjectInfoBox from "@/components/Projects/ProjectInfoBox";
-import { Button } from "@/components/ui/button";
 import { Highlighter } from "@/components/ui/highlighter";
 import { projects } from "@/const/projects";
 import { GitHubIcon } from "@/icons/devIcons";
@@ -23,20 +22,32 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
         <MainPage>
             <section className="relative flex flex-col gap-4 items-center justify-center min-h-dvh">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between gap-4">
                         <div className="flex flex-col gap-4 w-fit">
                             <div className="w-fit mx-auto">
                                 <Highlighter action="underline" isView={true}>
-                                    <SectionHeader text={name} />
+                                    <SectionHeader text={name} animateOnMount />
                                 </Highlighter>
                             </div>
-                            <SectionDescription text={description} className="text-justify" />
+                            <SectionDescription text={description} className="text-justify" animateOnMount />
                         </div>
                         <div className="flex gap-4 items-center">
-                                <a href={linkWebsite} target="_blank" className="hover:scale-120 transition-all duration-300">
+                            <a
+                                href={linkWebsite}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Website"
+                                className="hover:scale-120 transition-all duration-300"
+                            >
                                 <LinkIcon width={36} />
                             </a>
-                            <a href={linkGithub} target="_blank" className="hover:scale-120 transition-all duration-300">
+                            <a
+                                href={linkGithub}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="GitHub"
+                                className="hover:scale-120 transition-all duration-300"
+                            >
                                 <GitHubIcon width={36} />
                             </a>
                         </div>
@@ -49,7 +60,7 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
                         className="hover:scale-105 transition-all duration-300 border rounded-md justify-self-end"
                     />
                 </div>
-                <div className="w-full flex gap-6">
+                <div className="w-full flex gap-6 flex-col md:flex-row">
                     <ProjectInfoBox title="Výzvy" items={challenges} background="#EA4444" />
                     <ProjectInfoBox title="To Do" items={todos} background="#729EA1" />
                 </div>

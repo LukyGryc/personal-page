@@ -7,10 +7,10 @@ export const projects = [
             "Chtěl jsem udělat hezkou s vícero stránkami pro vyzkoušení App Routeru, ale neměl jsem pro to dostatek obsahu, tak jsem nakonec udělal jen jednu stránku s vícero sekcemi"
         ],
         todos: [],
-        image: "/personal-page.png",
+        image: "/truhlarstvi-gryc.png",
         background: "#94AE95",
-        linkWebsite: "",
-        linkGithub: ""
+        linkWebsite: "https://truhlarstvi-gryc.vercel.app/",
+        linkGithub: "https://github.com/LukyGryc/truhlarstvi-gryc"
     },
     {
         id: "2",
@@ -23,10 +23,10 @@ export const projects = [
         todos: [
             "Přidat page která se ukáže po dokončení objednávky"
         ],
-        image: "/personal-page.png",
+        image: "/only-pans.png",
         background: "#729EA1",
-        linkWebsite: "",
-        linkGithub: ""
+        linkWebsite: "https://only-pans-demo.vercel.app/",
+        linkGithub: "https://github.com/LukyGryc/only-pans"
     },    
     {
         id: "3",
@@ -44,7 +44,7 @@ export const projects = [
         image: "/personal-page.png",
         background: "#B5BD89",
         linkWebsite: "",
-        linkGithub: ""
+        linkGithub: "https://github.com/LukyGryc/savora"
     },    
     {
         id: "4",
@@ -61,6 +61,6 @@ export const projects = [
         image: "/personal-page.png",
         background: "#CABE91",
         linkWebsite: "",
-        linkGithub: ""
+        linkGithub: "https://github.com/LukyGryc/personal-page"
     },
 ];
