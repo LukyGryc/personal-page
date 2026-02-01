@@ -34,7 +34,7 @@ const SkillsSection = () => {
         <Section className="flex flex-col gap-10 text-start justify-center py-16">
             <SectionHeader text="Skills" className="justify-start" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <SkillsCard title="Pracoval s" items={workedWithItems} />
+                <SkillsCard title="Pracuji s" items={workedWithItems} />
                 <SkillsCard title="Učím se" items={learningItems} />
                 <SkillsCard title="Další v pořadí" items={toLearn} />
             </div>

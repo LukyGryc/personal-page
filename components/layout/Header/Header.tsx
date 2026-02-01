@@ -3,6 +3,12 @@ import { AnimatedThemeToggler } from "../../ui/animated-theme-toggler"
 import HeaderLinks from "./HeaderLinks"
 import LinksDrawer from "./LinksDrawer"
 
+const links = [
+    { name: "O mně", href: "/" },
+    { name: "Projekty", href: "/projects" },
+    { name: "Kontakt", href: "/contact" },
+]
+
 //AnimatedThemeToggler - fav feature
 const Header = () => {
     return (
@@ -13,9 +19,9 @@ const Header = () => {
                 </div>
                 <div className="flex items-center gap-4 h-6 hidden md:inline-flex">
                     <AnimatedThemeToggler className="cursor-pointer" />
-                    <HeaderLinks />
+                    <HeaderLinks links={links} />
                 </div>
-                <LinksDrawer />
+                <LinksDrawer links={links} />
             </div>
         </header>
     )

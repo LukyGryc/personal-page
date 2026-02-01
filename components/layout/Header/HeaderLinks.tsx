@@ -3,17 +3,11 @@
 import Link from "next/link"
 import { motion } from "motion/react"
 
-const navigation = [
-    { name: "O mně", href: "/" },
-    { name: "Projekty", href: "/projects" },
-    { name: "Kontakt", href: "/contact" },
-]
-
 //ChatGPT helped with the animation
-const HeaderLinks = () => {
+const HeaderLinks = ({ links }: { links: { name: string, href: string }[] }) => {
     return (
         <nav className="flex gap-4 h-full">
-            {navigation.map(({ name, href }) => (
+            {links.map(({ name, href }) => (
                 <Link href={href} className="block" key={href}>
                     <motion.span
                         className="relative inline-block overflow-hidden"

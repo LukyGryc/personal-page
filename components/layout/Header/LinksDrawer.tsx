@@ -4,15 +4,9 @@ import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, D
 import { GitHubIcon } from '@/icons/devIcons'
 import { CircleX, MenuIcon } from 'lucide-react'
 import Link from 'next/link'
+    
 
-//Unify them with the HeaderLinks component
-const navigation = [
-    { name: "O mně", href: "/" },
-    { name: "Projekty", href: "/projects" },
-    { name: "Kontakt", href: "/contact" },
-]
-
-const LinksDrawer = () => {
+const LinksDrawer = ({ links }: { links: { name: string, href: string }[] }) => {
     return (
         <Drawer direction="right">
             <DrawerTrigger asChild className="flex items-center gap-4 h-6 block md:hidden">
@@ -30,7 +24,7 @@ const LinksDrawer = () => {
                     </div>
                 </DrawerHeader>
                 <div className="flex flex-col gap-2 px-4 mt-4">
-                    {navigation.map(({ name, href }) => (
+                    {links.map(({ name, href }) => (
                         <DrawerTrigger key={href} asChild>
                             <Link href={href} className="block text-xl font-bold">
                                 {name}
