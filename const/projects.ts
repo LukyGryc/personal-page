@@ -34,16 +34,17 @@ export const projects = [
         description: "Projekt ode mě pro mě, který bych rád používal a rozvíjel dál. Zatím je to jen MVP, kde zatím největší pozornost dostaly databáze a user authentication.",
         challenges: [
             "Mobilní layout, protože kalendář je relativně malý na mobilu, tabulku s daty jsem nakonec schoval a bar chartu předělal osu",
-            "Formát dat tak, aby dával smysl. V tabulkách jsem potřeboval data podle datumů (data podle dat?), zatímco v chartu podle kategorie"
+            "Formát dat tak, aby dával smysl. V tabulkách jsem potřeboval data podle datumů (data podle dat?), zatímco v chartu podle kategorie",
+            "Tabulka s daty vypadá lépe když je v ní více dat"
         ],
         todos: [
             "Přidat další charty do dashboardu",
             "User specific kategorie",
             "Password reset, email reset, email verification a forgot your password features"
         ],
-        image: "/personal-page.png",
+        image: "/savora.png",
         background: "#B5BD89",
-        linkWebsite: "",
+        linkWebsite: "https://savora-demo.vercel.app/",
         linkGithub: "https://github.com/LukyGryc/savora"
     },    
     {
