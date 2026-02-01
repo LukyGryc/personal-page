@@ -5,7 +5,6 @@ import { GitHubIcon } from '@/icons/devIcons'
 import { CircleX, MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 
-
 const LinksDrawer = ({ links }: { links: { name: string, href: string }[] }) => {
     return (
         <Drawer direction="right">

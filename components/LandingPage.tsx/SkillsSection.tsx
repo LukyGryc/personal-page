@@ -2,7 +2,7 @@
 import { DevIcons } from "@/icons/devIcons";
 import SectionHeader from "../layout/Texts/SectionHeader";
 import SkillsCard from "../ui/SkillsCard";
-import Section from "./Section";
+import Section from "../layout/Pages/Section";
 import { Highlighter } from "../ui/highlighter";
 
 const workedWithItems = [
