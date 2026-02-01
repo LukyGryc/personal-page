@@ -14,7 +14,7 @@ const SectionHeader = ({
     const words = text.split(" ")
     return (
         <motion.h1
-            className={cn("text-4xl font-bold flex justify-center", className)}
+            className={cn("text-4xl font-bold flex flex-wrap justify-center", className)}
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}

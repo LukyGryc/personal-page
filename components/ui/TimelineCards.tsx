@@ -2,6 +2,7 @@
 import { motion, MotionProps } from "motion/react"
 import DoubleBorderBeam from "./DoubleBorderBeam"
 import PointerHeart from "./PointerHeart"
+import { cn } from "@/lib/utils"
 
 interface TimelineProps {
     items: {
@@ -9,43 +10,19 @@ interface TimelineProps {
         date: string
         description?: string
     }[]
+    className?: string
 }
 
-const TimelineCards = ({ items }: TimelineProps) => {
-
-    const getMotionProps = (index: number): MotionProps => {
-
-        //first from left
-        if (index === 0) {
-            return {
-                initial: { opacity: 0, x: -100 },
-                whileInView: { opacity: 1, x: 0 },
-            }
-        }
-
-        //last from right
-        if (index === items.length - 1) {
-            return {
-                initial: { opacity: 0, x: 100 },
-                whileInView: { opacity: 1, x: 0 },
-            }
-        }
-
-        //middle ones from bottom
-        return {
-            initial: { opacity: 0, y: 100 },
-            whileInView: { opacity: 1, y: 0 },
-        }
-    }
+const TimelineCards = ({ items, className }: TimelineProps) => {
 
     return (
-        <div className="grid grid-cols-3 gap-6">
-            {items.map(({ date, description, title }, index) => (
+        <div className={cn(className)}>
+            {items.map(({ date, description, title }) => (
                 <motion.div
                     key={title}
-                    className="group relative"
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    {...getMotionProps(index)}
+                    initial={{ opacity: 0, y:  100 }}
+                    whileInView= {{opacity: 1, y: 0 }}
                 >
                     <div
                         className="
@@ -54,7 +31,7 @@ const TimelineCards = ({ items }: TimelineProps) => {
                             shadow-lg hover:shadow-xl
                             transition-all duration-300
                             hover:scale-105
-                            overflow-hidden
+                            group relative overflow-hidden
                         "
                     >
                         <p className="text-sm">{date}</p>

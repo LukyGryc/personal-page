@@ -46,7 +46,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="w-full h-full relative">
-          <LightRays className="z-0 absolute h-full" />
+          <LightRays className="z-[-1] absolute h-full xdd" />
           <div className=" w-full z-10">
             <Header />
             {children}

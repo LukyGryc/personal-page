@@ -16,7 +16,7 @@ interface SkillsCardProps {
 const SkillsCard = ({ title, items }: SkillsCardProps) => {
     return (
         <div>
-            <div className="flex flex-col gap-2 border rounded-md p-4 relative overflow-hidden group hover:scale-105 transition-all duration-300">
+            <div className="h-full flex flex-col gap-2 border rounded-md p-4 relative overflow-hidden group hover:scale-105 transition-all duration-300">
                 <h3 className="text-lg font-bold">{title}</h3>
                 <div className="flex flex-wrap gap-2">
                     {items.map((item) => (
