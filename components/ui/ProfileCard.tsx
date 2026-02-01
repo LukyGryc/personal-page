@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useCallback, useMemo, useState } from 'react';
+"use client";
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 
 const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
 
@@ -86,6 +87,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
   const enterTimerRef = useRef<number | null>(null);
   const leaveRafRef = useRef<number | null>(null);
+  const tiltListenerAttachedRef = useRef(false);
 
   const tiltEngine = useMemo<TiltEngine | null>(() => {
     if (!enableTilt) return null;
@@ -291,6 +293,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
     const handleClick = (): void => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
+      if (tiltListenerAttachedRef.current) return;
       const anyMotion = window.DeviceMotionEvent as typeof DeviceMotionEvent & {
         requestPermission?: () => Promise<string>;
       };
@@ -300,11 +303,13 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           .then((state: string) => {
             if (state === 'granted') {
               window.addEventListener('deviceorientation', deviceOrientationHandler);
+              tiltListenerAttachedRef.current = true;
             }
           })
           .catch(console.error);
       } else {
         window.addEventListener('deviceorientation', deviceOrientationHandler);
+        tiltListenerAttachedRef.current = true;
       }
     };
     shell.addEventListener('click', handleClick);
@@ -321,6 +326,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       shell.removeEventListener('pointerleave', pointerLeaveHandler);
       shell.removeEventListener('click', handleClick);
       window.removeEventListener('deviceorientation', deviceOrientationHandler);
+      tiltListenerAttachedRef.current = false;
       if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
       if (leaveRafRef.current) cancelAnimationFrame(leaveRafRef.current);
       tiltEngine.cancel();

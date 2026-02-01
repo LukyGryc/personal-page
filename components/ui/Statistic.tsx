@@ -33,11 +33,14 @@ const Statistic = ({ title, value, description, addPlus }: StatisticProps) => {
       setCount(Math.round(latest))
     })
 
-    springCount.on("animationComplete", () => {
+    const unsubscribeComplete = springCount.on("animationComplete", () => {
       setShowOptional(true)
     })
 
-    return unsubscribe
+    return () => {
+      unsubscribe()
+      unsubscribeComplete()
+    }
   }, [isInView, value, springCount])
 
   const animationExtra: MotionProps = {
