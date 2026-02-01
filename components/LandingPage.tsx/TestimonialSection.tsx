@@ -8,7 +8,7 @@ const TestimonialSection = () => {
   return (
     <Section className="flex flex-col gap-10 text-start justify-center py-16">
       <div className='flex flex-col gap-2'>
-        <SectionHeader text="Lidé o mně říkaji" className="justify-start" />
+        <SectionHeader text="Lidé o mně říkají" className="justify-start" />
         <SectionDescription text="(nebo si to aspoň myslím)" />
       </div>
       <div className='flex justify-center'>
