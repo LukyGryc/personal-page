@@ -48,10 +48,10 @@ const AboutMeSection = () => {
                         <SectionDescription key={index} text={item} />
                     ))}
                     <Timeline items={timelineItems} className="flex flex-col gap-4 md:flex-row"/>
-                    <div className="grid grid-cols-2 gap-4">
+                    {/*<div className="grid grid-cols-2 gap-4">
                         <Statistic title="Věk" value={28} />
                         <Statistic title="IQ" value={90} addPlus={true} description="(snad)" />
-                    </div>
+                    </div>*/}
                 </div>
 
             </div>

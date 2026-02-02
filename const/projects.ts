@@ -4,7 +4,7 @@ export const projects = [
         name: "Truhlářství Gryč",
         description: "První projekt založený na Next.js. Původní myšlenka byla vytvořit vizuálně přívětivou stránku, ale spíš se z toho stal takový Next.js playground, kde jsem zkoušel základní Next.js funkce, Motion a deployment přes Vercel.",
         challenges: [
-            "Chtěl jsem udělat hezkou s vícero stránkami pro vyzkoušení App Routeru, ale neměl jsem pro to dostatek obsahu, tak jsem nakonec udělal jen jednu stránku s vícero sekcemi"
+            "Chtěl jsem udělat hezkou webovku s vícero stránkami pro vyzkoušení App Routeru, ale neměl jsem pro to dostatek obsahu, tak jsem nakonec udělal jen jednu stránku s vícero sekcemi"
         ],
         todos: [],
         image: "/truhlarstvi-gryc.png",
@@ -17,7 +17,7 @@ export const projects = [
         name: "OnlyPans",
         description: "Mini eshop zaměřený na ty nejlepší pánve, které vaří skoro za vás. Plán tohoto projektu byl vyzkoušet si práci s databází, cachingem a dynamickými stránkami.",
         challenges: [
-            "Menu mé v hlavě vypadalo lépe, ale nakonec jsem ho nechal, protože nebylo předmětem tohoto projektu",
+            "Menu v mé hlavě vypadalo lépe, ale nakonec jsem ho nechal, protože nebylo předmětem tohoto projektu",
             "Mobilní layout má pár much"
         ],
         todos: [
@@ -43,8 +43,7 @@ export const projects = [
             "Export dat do CSV",
             "Možnost zaškrnout \"Exclude from analysis\" pro specifické itemy, které mohou být jednorázovýnm výdajem",
             "Password reset, email reset, email verification a forgot your password features",
-            "Upravit styling Tracking panelu když je v něm moc itemů, aby byl zarovnaný s kalendářem",
-            "Mít buďto specifický loading podle stránky, a nebo zkusit použít Suspense komponent"
+            "Upravit styling Tracking panelu když je v něm moc itemů, aby byl zarovnaný s kalendářem"
         ],
         image: "/savora.png",
         background: "#B5BD89",
