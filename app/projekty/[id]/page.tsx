@@ -7,10 +7,25 @@ import { projects } from "@/const/projects";
 import { GitHubIcon } from "@/icons/devIcons";
 import { LinkIcon } from "lucide-react";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-const ProjectDetail = async ({ params }: { params: { id: string } }) => {
-    const { id } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
+  if (!project) return { title: "Projekt nenalezen" };
+  return {
+    title: project.name,
+    description: project.description,
+  };
+}
+
+const ProjectDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
     const project = projects.find((project) => project.id === id);
     if (!project) {
         notFound();
@@ -26,7 +41,7 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
                         <div className="flex flex-col gap-4 w-fit">
                             <div className="w-fit mx-auto">
                                 <Highlighter action="underline" isView={true}>
-                                    <SectionHeader text={name} animateOnMount />
+                                    <SectionHeader text={name} animateOnMount level={1} />
                                 </Highlighter>
                             </div>
                             <SectionDescription text={description} className="text-justify" animateOnMount />

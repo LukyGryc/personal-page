@@ -9,19 +9,23 @@ const SectionHeader = ({
     text,
     className,
     animateOnMount,
+    level = 2,
 }: {
     text: string
     className?: string
+    /** 1 = page title (one per page), 2 = section title */
     animateOnMount?: boolean
+    level?: 1 | 2
 }) => {
     const visible = { opacity: 1, y: 0 }
     const [animationDone, setAnimationDone] = useState(false)
+    const Tag = level === 1 ? motion.h1 : motion.h2
 
     //Regex to determine what parts should be highlighted
     const parts = text.split(/(\([^()]+\))/g)
 
     return (
-        <motion.h1
+        <Tag
             className={cn(
                 "text-4xl font-bold whitespace-pre-wrap",
                 className
@@ -51,7 +55,7 @@ const SectionHeader = ({
                     </span>
                 )
             })}
-        </motion.h1>
+        </Tag>
     )
 }
 

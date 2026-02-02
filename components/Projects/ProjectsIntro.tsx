@@ -7,7 +7,7 @@ const ProjectsIntro = () => {
 
     return (
         <Section className="flex flex-col gap-4 items-center justify-center min-h-dvh">
-            <SectionHeader text="Projekty" animateOnMount />
+            <SectionHeader text="Projekty" animateOnMount level={1} />
             <SectionDescription
                 text="Projekty, které jsem vytvořil během posledních pár týdnů, ve kterých jsem chtěl vyzkoušet co nejvíce ze světa Next.js"
                 animateOnMount

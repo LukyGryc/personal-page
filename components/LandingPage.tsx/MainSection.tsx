@@ -8,7 +8,7 @@ const MainSection = () => {
     return (
         <Section className="flex flex-col justify-center min-h-dvh">
             <div className="text-center flex flex-col gap-4">
-                <SectionHeader text="Jsem (WOW), a nebo spíš (WTF)? 👀" animateOnMount />
+                <SectionHeader text="Jsem (WOW), a nebo spíš (WTF)? 👀" animateOnMount level={1} />
                 <SectionDescription text="Pojďme to zjistit" animateOnMount />
                 <ScrollDown />
             </div>

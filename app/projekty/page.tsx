@@ -3,6 +3,11 @@ import ProjectCard from "@/components/Projects/ProjectCard"
 import ProjectsIntro from "@/components/Projects/ProjectsIntro"
 import { projects } from "@/const/projects"
 
+export const metadata = {
+  title: "Projekty",
+  description:
+    "Projekty, které jsem vytvořil během posledních pár týdnů, ve kterých jsem chtěl vyzkoušet co nejvíce ze světa Next.js.",
+}
 
 const Projects = () => {
 
