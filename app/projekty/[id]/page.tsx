@@ -61,7 +61,7 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
                     />
                 </div>
                 <div className="w-full flex gap-6 flex-col md:flex-row">
-                    <ProjectInfoBox title="Výzvy" items={challenges} background="#EA4444" />
+                    <ProjectInfoBox title="Challenges" items={challenges} background="#EA4444" />
                     <ProjectInfoBox title="To Do" items={todos} background="#729EA1" />
                 </div>
             </section>

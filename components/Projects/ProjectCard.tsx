@@ -21,6 +21,7 @@ const ProjectCard = ({ project: { id, name, description, image, background }, in
         target: cardRef,
         offset: ["start end", "end end"],
     });
+    
     const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
@@ -39,7 +40,7 @@ const ProjectCard = ({ project: { id, name, description, image, background }, in
                     <p className="text-sm text-justify">{description}</p>
                 </div>
                 <div>
-                    <Button>
+                    <Button asChild>
                         <Link href={`/projekty/${id}`}>
                             Zjistit více
                         </Link>

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lukáš Gryč",
-  description: "Portfolio, životopis, a další srandy",
+  description: "Všechno co jste chtěli i nechtěli o mně vědět, ale báli jste se zeptat",
 };
 
 export default function RootLayout({
