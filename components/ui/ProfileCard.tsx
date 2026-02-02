@@ -48,6 +48,7 @@ interface ProfileCardProps {
   handle?: string;
   status?: string;
   contactText?: string;
+  hideContactButton?: boolean;
   showUserInfo?: boolean;
   onContactClick?: () => void;
 }
@@ -80,7 +81,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   status = 'Online',
   contactText = 'Contact',
   showUserInfo = true,
-  onContactClick
+  onContactClick,
+  hideContactButton = true
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -500,7 +502,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               backgroundColor: 'rgba(0, 0, 0, 0.9)',
               borderRadius: cardRadius,
               display: 'grid',
-              gridArea: '1 / -1'
+              gridArea: '1 / -1',
+              zIndex: 0,
+              isolation: 'isolate'
             }}
           >
             {/* Shine layer */}
@@ -509,7 +513,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             {/* Glare layer */}
             <div style={glareStyle} />
 
-            {/* Avatar content */}
+            {/* Avatar content - explicit z-index so it stacks above shine/glare and avoids overlay effect */}
             <div
               className="overflow-visible"
               style={{
@@ -518,14 +522,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 gridArea: '1 / -1',
                 borderRadius: cardRadius,
                 pointerEvents: 'none',
-                backfaceVisibility: 'hidden'
+                backfaceVisibility: 'hidden',
+                zIndex: 5
               }}
             >
               <img
                 className="w-full absolute left-1/2 bottom-[-1px] will-change-transform transition-transform duration-[120ms] ease-out"
                 src={avatarUrl}
                 alt={`${name || 'User'} avatar`}
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 style={{
                   transformOrigin: '50% 100%',
                   transform:
@@ -563,7 +569,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         className="w-full h-full object-cover rounded-full"
                         src={miniAvatarUrl || avatarUrl}
                         alt={`${name || 'User'} mini avatar`}
-                        loading="lazy"
+                        loading="eager"
                         style={{ display: 'block', gridArea: 'auto', borderRadius: '50%', pointerEvents: 'auto' }}
                         onError={e => {
                           const t = e.target as HTMLImageElement;
@@ -573,26 +579,30 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       />
                     </div>
                     <div className="flex flex-col items-start gap-1.5">
-                      <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
+                      <div className="text-sm font-medium text-white/90 leading-none">{handle}</div>
                       <div className="text-sm text-white/70 leading-none">{status}</div>
                     </div>
                   </div>
-                  <button
-                    className="border border-white/10 rounded-lg px-4 py-3 text-xs font-semibold text-white/90 cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:border-white/40 hover:-translate-y-px"
-                    onClick={handleContactClick}
-                    style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '8px' }}
-                    type="button"
-                    aria-label={`Contact ${name || 'user'}`}
-                  >
-                    {contactText}
-                  </button>
+                  {
+                    !hideContactButton && (
+                      <button
+                        className="border border-white/10 rounded-lg px-4 py-3 text-xs font-semibold text-white/90 cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:border-white/40 hover:-translate-y-px"
+                        onClick={handleContactClick}
+                        style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '8px' }}
+                        type="button"
+                        aria-label={`Contact ${name || 'user'}`}
+                      >
+                        {contactText}
+                      </button>
+                    )
+                  }
                 </div>
               )}
             </div>
 
-            {/* Details content */}
+            {/* Details content - above avatar so name/title are on top */}
             <div
-              className="max-h-full overflow-hidden text-center relative z-[5]"
+              className="max-h-full overflow-hidden text-center relative z-[6]"
               style={{
                 transform:
                   'translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)',

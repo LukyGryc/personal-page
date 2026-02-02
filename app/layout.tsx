@@ -15,9 +15,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lukasgryc.cz";
+
 export const metadata: Metadata = {
-  title: "Lukáš Gryč",
-  description: "Všechno co jste chtěli i nechtěli o mně vědět, ale báli jste se zeptat",
+  title: {
+    default: "Lukáš Gryč",
+    template: "%s | Lukáš Gryč",
+  },
+  description:
+    "Všechno co jste chtěli i nechtěli o mně vědět, ale báli jste se zeptat",
+  openGraph: {
+    title: "Lukáš Gryč",
+    description:
+      "Všechno co jste chtěli i nechtěli o mně vědět, ale báli jste se zeptat",
+    url: siteUrl,
+    siteName: "Lukáš Gryč",
+    locale: "cs_CZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lukáš Gryč",
+    description:
+      "Všechno co jste chtěli i nechtěli o mně vědět, ale báli jste se zeptat",
+  },
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout({
@@ -26,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="cs" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -45,9 +67,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-background focus:text-foreground focus:ring-2 focus:ring-ring focus:rounded-md"
+        >
+          Přeskočit na hlavní obsah
+        </a>
         <div className="w-full h-full relative">
-          <LightRays className="z-[-1] absolute h-full xdd" />
-          <div className=" w-full z-10">
+          <LightRays className="z-[-1] absolute h-full" aria-hidden />
+          <div className="w-full z-10">
             <Header />
             {children}
           </div>

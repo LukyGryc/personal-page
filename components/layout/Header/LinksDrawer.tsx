@@ -8,8 +8,11 @@ import Link from 'next/link'
 const LinksDrawer = ({ links }: { links: { name: string, href: string }[] }) => {
     return (
         <Drawer direction="right">
-            <DrawerTrigger className="flex items-center gap-4 h-6 block md:hidden">
-                <MenuIcon className="cursor-pointer" />
+            <DrawerTrigger
+                className="flex items-center gap-4 h-6 block md:hidden"
+                aria-label="Otevřít menu"
+            >
+                <MenuIcon className="cursor-pointer" aria-hidden />
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
@@ -34,14 +37,15 @@ const LinksDrawer = ({ links }: { links: { name: string, href: string }[] }) => 
                 <DrawerFooter>
                     <div className="flex items-center justify-between">
                         <AnimatedThemeToggler />
-                        <DrawerTrigger>
+                        <DrawerTrigger asChild>
                             <a
                                 href="https://github.com/LukyGryc"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block text-xl font-bold"
+                                aria-label="GitHub profil Lukáš Gryč"
                             >
-                                <GitHubIcon width={24} />
+                                <GitHubIcon width={24} aria-hidden />
                             </a>
                         </DrawerTrigger>
                     </div>

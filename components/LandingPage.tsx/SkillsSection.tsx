@@ -4,6 +4,7 @@ import SectionHeader from "../layout/Texts/SectionHeader";
 import SkillsCard from "../ui/SkillsCard";
 import Section from "../layout/Pages/Section";
 import { Highlighter } from "../ui/highlighter";
+import { motion } from "motion/react";
 
 const workedWithItems = [
     { name: "React", Icon: DevIcons.React },
@@ -33,11 +34,16 @@ const SkillsSection = () => {
     return (
         <Section className="flex flex-col gap-10 text-start justify-center py-16">
             <SectionHeader text="Skills" className="justify-start" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <motion.div
+                className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+            >
                 <SkillsCard title="Pracuji s" items={workedWithItems} />
                 <SkillsCard title="Učím se" items={learningItems} />
                 <SkillsCard title="Další v pořadí" items={toLearn} />
-            </div>
+            </motion.div>
             <div className="text-center">
                 <span className="w-fit opacity-5 hover:opacity-100 transition-all duration-300">
                     <Highlighter

@@ -16,14 +16,14 @@ interface TimelineProps {
 const TimelineCards = ({ items, className }: TimelineProps) => {
 
     return (
-        <div className={cn(className)}>
+        <motion.div
+            className={cn(className)}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            initial={{ opacity: 0, y:  100 }}
+            whileInView= {{opacity: 1, y: 0 }}
+        >
             {items.map(({ date, description, title }) => (
-                <motion.div
-                    key={title}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    initial={{ opacity: 0, y:  100 }}
-                    whileInView= {{opacity: 1, y: 0 }}
-                >
+                <div key={title} >
                     <div
                         className="
                             flex flex-col gap-2 p-4 justify-between text-center h-full
@@ -42,9 +42,9 @@ const TimelineCards = ({ items, className }: TimelineProps) => {
 
                     </div>
                     <PointerHeart />
-                </motion.div>
+                </div>
             ))}
-        </div>
+        </motion.div>
 
     )
 }
