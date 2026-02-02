@@ -1,52 +1,55 @@
 import { cn } from "@/lib/utils";
 
+type Variant = "challenges" | "todos";
+
 interface ProjectInfoBoxProps {
-    title: string,
-    items: string[],
-    background: string,
-    className?: string
+    title: string;
+    items: string[];
+    variant?: Variant;
+    className?: string;
 }
 
-const ProjectInfoBox = ({ title, items, background, className }: ProjectInfoBoxProps) => {
+const accentByVariant: Record<Variant, string> = {
+    challenges: "border-l-destructive/70",
+    todos: "border-l-chart-2",
+};
 
+const ProjectInfoBox = ({ title, items, variant = "challenges", className }: ProjectInfoBoxProps) => {
     if (items.length === 0) {
-        return <></>;
+        return null;
     }
 
     return (
-        <div
+        <section
             className={cn(
-                "relative w-full md:w-1/2 overflow-hidden",
-                "rounded-xl border border-white/20 shadow-lg shadow-black/15",
-                "hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-300 ease-out",
+                "w-full md:flex-1 min-w-0",
+                "border border-border rounded-lg",
+                "pl-4 pr-4 pt-4 pb-4",
+                "border-l-4",
+                accentByVariant[variant],
                 className
             )}
-            style={{ backgroundColor: background }}
         >
-            <div
-                className="absolute left-0 top-0 bottom-0 w-1 opacity-90"
-                style={{ backgroundColor: "color-mix(in srgb, white 30%, transparent)" }}
-            />
-            <div className="relative pl-5 pr-5 py-5">
-                <h2 className="text-xl font-semibold tracking-tight text-white/95 drop-shadow-sm mb-3">
-                    {title}
-                </h2>
-                <ul className="space-y-2">
-                    {items.map((item) => (
-                        <li
-                            key={item}
-                            className="flex items-start gap-2 text-white/90 text-sm"
-                        >
+            <h2 className="text-lg font-semibold text-foreground tracking-tight mb-3">
+                {title}
+            </h2>
+            <ul className="space-y-2 list-none p-0 m-0">
+                {items.map((item) => (
+                    <li
+                        key={item}
+                        className="flex gap-2 items-start text-sm leading-relaxed "
+                    >
+                        <div className="flex items-center h-[1lh]">
                             <span
-                                className="mt-1.5 size-1.5 shrink-0 rounded-full bg-white/70"
+                                className="size-1.5 shrink-0 rounded-full bg-muted-foreground/50"
                                 aria-hidden
                             />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
+                        </div>
+                        <span className="text-foreground/90">{item}</span>
+                    </li>
+                ))}
+            </ul>
+        </section>
     );
 };
 
