@@ -1,5 +1,5 @@
 "use client"
-import Section from './Section'
+import Section from '../layout/Pages/Section'
 import SectionHeader from '../layout/Texts/SectionHeader'
 import SectionDescription from '../layout/Texts/SectionDescription'
 import Carousel from '../Carousel'

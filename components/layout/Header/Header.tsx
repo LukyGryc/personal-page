@@ -5,8 +5,8 @@ import LinksDrawer from "./LinksDrawer"
 
 const links = [
     { name: "O mně", href: "/" },
-    { name: "Projekty", href: "/projects" },
-    { name: "Kontakt", href: "/contact" },
+    { name: "Projekty", href: "/projekty" },
+   // { name: "Kontakt", href: "/contact" },
 ]
 
 //AnimatedThemeToggler - fav feature
