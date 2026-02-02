@@ -37,6 +37,7 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title="Website"
+                                aria-label="Website"
                                 className="hover:scale-120 transition-all duration-300"
                             >
                                 <LinkIcon width={36} />
@@ -46,6 +47,7 @@ const ProjectDetail = async ({ params }: { params: { id: string } }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title="GitHub"
+                                aria-label="GitHub"
                                 className="hover:scale-120 transition-all duration-300"
                             >
                                 <GitHubIcon width={36} />
