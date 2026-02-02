@@ -40,8 +40,10 @@ const AboutMeSection = () => {
                     className="hidden lg:block"
                     name="Lukáš Gryč"
                     title=""
-                    showUserInfo={false}
+                    showUserInfo={true}
                     avatarUrl="/2.png"
+                    handle="lukygryc@seznam.cz"
+                    status="+420 602 775 197"
                 />
                 <div className="w-full lg:w-1/2 flex flex-col gap-6 text-justify">
                     {informationItems.map((item, index) => (
