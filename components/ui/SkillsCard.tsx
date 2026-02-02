@@ -16,15 +16,13 @@ interface SkillsCardProps {
 const SkillsCard = ({ title, items }: SkillsCardProps) => {
     return (
         <HoverableCard>
-            <div className="flex flex-col gap-4">
-                <h3 className="text-lg font-bold">{title}</h3>
-                <div className="flex flex-wrap gap-2">
-                    {items.map((item) => (
-                        <Pill key={item.name} name={item.name} icon={<item.Icon />} />
-                    ))}
-                </div>
-                <DoubleBorderBeam />
+            <h3 className="text-lg font-bold">{title}</h3>
+            <div className="flex flex-wrap gap-2">
+                {items.map((item) => (
+                    <Pill key={item.name} name={item.name} icon={<item.Icon />} />
+                ))}
             </div>
+            <DoubleBorderBeam />
         </HoverableCard>
     )
 }

@@ -25,8 +25,8 @@ const timelineItems = [
 ]
 
 const informationItems = [
-    "Jmenuji se Lukáš Gryč, pocházím ze Sokolova a momentálně žiju v Plzni.",
-    "Po studiu se zaměřením na informační technologie jsem se vydal spíš praktickou cestou.",
+    "Je mi 28 let, pocházím ze Sokolova a momentálně žiju v Plzni.",
+    "Vystudoval jsem střední školu se zaměřením na informační technologie a chvíli si vyzkoušel vysokoškolské studium.",
     "Dnes pracuju v Korn Ferry, kde se poslední 2 roky podílím na vývoji interní webové aplikace postavené na Reactu a TypeScriptu."
 ];
 
@@ -41,6 +41,7 @@ const AboutMeSection = () => {
                     name="Lukáš Gryč"
                     title=""
                     showUserInfo={false}
+                    avatarUrl="/2.png"
                 />
                 <div className="w-full lg:w-1/2 flex flex-col gap-6 text-justify">
                     {informationItems.map((item, index) => (

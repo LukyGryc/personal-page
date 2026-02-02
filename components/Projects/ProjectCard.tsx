@@ -36,8 +36,8 @@ const ProjectCard = ({ project: { id, name, description, image, background }, in
         >
             <div className="flex flex-col justify-between">
                 <div>
-                    <h3 className="text-2xl font-bold h-[50px]">{name}</h3>
-                    <p className="text-sm text-justify">{description}</p>
+                    <h3 className="text-3xl font-bold h-[50px]">{name}</h3>
+                    <p className="text-md text-justify">{description}</p>
                 </div>
                 <div>
                     <Button asChild>

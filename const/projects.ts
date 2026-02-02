@@ -53,7 +53,7 @@ export const projects = [
     {
         id: "4",
         name: "Personal Page",
-        description: "Stránka na které jsem se chtěl trochu představit, má sloužit jako životopis i portfolio. Zároveň jsem si chtěl vyzkoušet různé komponenty, trochu se vyblbnou a sem tam přidat menší easter egg. Nejvíce na celém webu se mi nejspíše líbí Dark/Light mode toggle.",
+        description: "Stránka na které jsem se chtěl trochu představit, má sloužit jako životopis i portfolio. Zároveň jsem si chtěl vyzkoušet různé komponenty, trochu se vyblbnou a sem tam přidat menší easter egg.",
         challenges: [
             "Původně jsem si chtěl vyzkoušet práci s WP Headless CMS, ale setup od hostingu až po pluginy zmíněné ve vašem článku bych momentálně nestíhal",
             "Některé animace jsem musel předělat kvůli mobilnímu layoutu"
