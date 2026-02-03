@@ -4,7 +4,6 @@ import Section from "../layout/Pages/Section"
 import SectionHeader from "../layout/Texts/SectionHeader";
 import SectionDescription from "../layout/Texts/SectionDescription";
 import Timeline from "../ui/TimelineCards";
-import Statistic from "../ui/Statistic";
 
 const timelineItems = [
     {
@@ -35,13 +34,13 @@ const AboutMeSection = () => {
     return (
         <Section className="flex flex-col gap-10 text-start justify-center py-16">
             <SectionHeader text="O mně" className="justify-start" />
-            <div className=" flex justify-between relative flex-col lg:flex-row gap-8">
+            <div className="flex justify-between relative flex-col lg:flex-row gap-8">
                 <ProfileCard
-                    className="hidden lg:block"
                     name="Lukáš Gryč"
                     title=""
                     showUserInfo={true}
                     avatarUrl="/2.png"
+                    miniAvatarUrl=""
                     handle="lukygryc@seznam.cz"
                     status="+420 602 775 197"
                 />
@@ -50,7 +49,7 @@ const AboutMeSection = () => {
                         //Index is used as key because the items are static and not changing
                         <SectionDescription key={index} text={item} />
                     ))}
-                    <Timeline items={timelineItems} className="flex flex-col gap-4 md:flex-row"/>
+                    <Timeline items={timelineItems} className="flex flex-col gap-4 md:flex-row" />
                     {/*<div className="grid grid-cols-2 gap-4">
                         <Statistic title="Věk" value={28} />
                         <Statistic title="IQ" value={90} addPlus={true} description="(snad)" />
