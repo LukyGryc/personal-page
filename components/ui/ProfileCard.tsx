@@ -452,7 +452,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   return (
     <div
       ref={wrapRef}
-      className={`relative touch-none ${className}`.trim()}
+      className={`relative touch-none w-full max-w-[360px] mx-auto ${className}`.trim()}
       style={{ perspective: '500px', transform: 'translate3d(0, 0, 0.1px)', ...cardStyle } as React.CSSProperties}
     >
       {behindGlowEnabled && (
@@ -469,9 +469,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
         <section
           className="grid relative overflow-hidden"
           style={{
-            height: '80svh',
-            maxHeight: '540px',
+            width: '100%',
+            maxWidth: '100%',
             aspectRatio: '0.718',
+            maxHeight: '540px',
             borderRadius: cardRadius,
             backgroundBlendMode: 'color-dodge, normal, normal, normal',
             boxShadow:

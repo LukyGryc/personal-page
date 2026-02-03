@@ -40,7 +40,8 @@ const SectionHeader = ({
                 const isHighlight = /^\([^()]+\)$/.test(part)
 
                 if (!isHighlight) {
-                    return <span key={index}>{part}</span>
+                    //Relative causes the highlighter not to affect neihgbor characters
+                    return <span key={index} className="relative">{part}</span>
                 }
 
                 return (

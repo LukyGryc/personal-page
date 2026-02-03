@@ -57,5 +57,4 @@ const ProjectCard = ({ project: { id, name, description, image, background }, in
         </motion.div>
     )
 }
-
 export default ProjectCard
