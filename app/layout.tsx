@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lukasgryc.cz";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lukasgryc.vercel.app";
 
 export const metadata: Metadata = {
   title: {
