@@ -4,7 +4,6 @@ import Section from "../layout/Pages/Section"
 import SectionHeader from "../layout/Texts/SectionHeader";
 import SectionDescription from "../layout/Texts/SectionDescription";
 import Timeline from "../ui/TimelineCards";
-import Statistic from "../ui/Statistic";
 
 const timelineItems = [
     {
@@ -42,6 +41,7 @@ const AboutMeSection = () => {
                     title=""
                     showUserInfo={true}
                     avatarUrl="/2.png"
+                    miniAvatarUrl=""
                     handle="lukygryc@seznam.cz"
                     status="+420 602 775 197"
                 />

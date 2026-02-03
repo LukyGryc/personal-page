@@ -31,7 +31,7 @@ export const projects = [
     {
         id: "3",
         name: "Savora",
-        description: "Projekt ode mě pro mě, který bych rád používal a rozvíjel dál. Měl by sloužit jako tracker výdajů s menšímy analýzami. Zatím je to jen MVP, kde největší pozornost dostaly databáze a user authentication.",
+        description: "Projekt ode mě pro mě, který bych rád používal a rozvíjel dál. Měl by sloužit jako tracker výdajů s menšími analýzami. Zatím je to WIP, kde největší pozornost dostaly databáze a user authentication.",
         challenges: [
             "Mobilní layout, protože kalendář je relativně malý na mobilu, tabulku s daty jsem nakonec schoval a bar chartu předělal osu",
             "Formát dat tak, aby dával smysl. V tabulkách jsem potřeboval data podle datumů (data podle dat?), zatímco v chartu podle kategorie",
@@ -55,7 +55,6 @@ export const projects = [
         name: "Personal Page",
         description: "Stránka na které jsem se chtěl trochu představit, má sloužit jako životopis i portfolio. Zároveň jsem si chtěl vyzkoušet různé komponenty, trochu se vyblbnou a sem tam přidat menší easter egg.",
         challenges: [
-            "Původně jsem si chtěl vyzkoušet práci s WP Headless CMS, ale setup od hostingu až po pluginy zmíněné ve vašem článku bych momentálně nestíhal",
             "Některé animace jsem musel předělat kvůli mobilnímu layoutu"
         ],
         todos: [],
