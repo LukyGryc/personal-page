@@ -39,7 +39,7 @@ export const projects = [
         ],
         todos: [
             "Přidat další charty do dashboardu",
-            "User specific kategorie a měna",
+            "User specific kategorie (i barvy) a měna",
             "Export dat do CSV",
             "Možnost zaškrnout \"Exclude from analysis\" pro specifické itemy, které mohou být jednorázovýnm výdajem",
             "Password reset, email reset, email verification a forgot your password features",
